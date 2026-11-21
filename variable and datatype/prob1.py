@@ -2,16 +2,22 @@
 
 a = input("Enter a value for a: ")
 b = input("Enter a value for b: ")
+
+def convert(value):
+    try:
+        return int(value)
+    except ValueError:
+        try:
+            return float(value)
+        except ValueError:
+            return value
+
+a = convert(a)
+b = convert(b)
+
+print("The type of variable a is:", type(a))
+print("The type of variable b is:", type(b))
 c=int(b)
-if a.isdigit():
-    a = int(a)
-elif a.replace(".", "", 1).isdigit():
-    a = float(a)
-
-t = type(a)
-print("The type of variable a is:", t)
-
-
 if a<c:
     print("a is greater than c")
 else:
